@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-))qxzlln9&ki+6n(3b6geo8*awy8o=lm0&8in(#qd1tmma$$+@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://django-report-generator.vercel.app/']
 
 
 # Application definition
