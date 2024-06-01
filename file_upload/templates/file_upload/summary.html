@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .summary-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin: 0 auto; /* Center the heading */
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="summary-header">
+        <h2>Summary Report</h2>
+        <button onclick="window.location.href='/export'">Export to Excel</button>
+    </div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>ACCNO</th>
+                <th>Cust State</th>
+                <th>Cust Pin</th>
+                <th>DPD</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in summary %}
+                <tr>
+                    <td>{{ row.Date }}</td>
+                    <td>{{ row.ACCNO }}</td>
+                    <td>{{ row.CustState }}</td>
+                    <td>{{ row.CustPin }}</td>
+                    <td>{{ row.DPD }}</td>
+                    <td>{{ row.Count }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
